@@ -1,8 +1,13 @@
 from app.models import Book
 from app.formatters import (
-    ConsoleDisplay, ReverseDisplay, ConsolePrinter,
-    BookJSONSerializer, BookXMLSerializer, ReversePrinter
+    ConsoleDisplay,
+    ReverseDisplay,
+    ConsolePrinter,
+    BookJSONSerializer,
+    BookXMLSerializer,
+    ReversePrinter,
 )
+
 
 def main(book: Book, commands: list[tuple[str, str]]) -> str | None:
     tools = {
@@ -28,7 +33,7 @@ def main(book: Book, commands: list[tuple[str, str]]) -> str | None:
 if __name__ == "__main__":
     sample_book = Book("Sample Book", "This is some sample content.")
 
-    results = main(sample_book, [("display", "reverse"), ("serialize", "xml")])
+    result = main(sample_book, [("display", "reverse"), ("serialize", "xml")])
 
-    for res in results:
-        print(f"Result: {res}")
+    if result:
+        print(result)

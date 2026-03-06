@@ -13,10 +13,12 @@ class DisplayInterface(BookAction):
     def execute(self, book: Book) -> None:
         pass
 
+
 class PrinterInterface(BookAction):
     @abstractmethod
     def execute(self, book: Book) -> None:
         pass
+
 
 class SerializerInterface(BookAction):
     @abstractmethod
